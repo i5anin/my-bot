@@ -1,5 +1,5 @@
 import { Telegraf, Context } from "telegraf";
-import { handleStart, handleTopics, handleAnswers } from "./handlers";
+import { handleStart, handleTopics, handleAnswers } from "./handlers.js";
 
 export const registerCommands = (bot: Telegraf<Context>) => {
     console.log("📌 Регистрируем команды");

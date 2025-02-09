@@ -1,7 +1,6 @@
 import { Telegraf, Context } from "telegraf";
-import { formatBotLink } from "./globals";
-import { registerCommands } from "./commands";
-import "./globals"; // Импортируем глобальные переменные
+import { formatBotLink } from "./globals.js";
+import { registerCommands } from "./commands.js";
 
 // Гарантируем, что глобальный BOT_TOKEN существует
 if (!global.BOT_TOKEN) {

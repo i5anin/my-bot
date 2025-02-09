@@ -1,7 +1,8 @@
-import { Context, Markup } from "telegraf";
+import { CustomContext } from "./types.js"; // Импортируем наш кастомный контекст
+import { Markup } from "telegraf";
 
 // Обработчик /start
-export const handleStart = (ctx: Context) => {
+export const handleStart = (ctx: CustomContext) => {
     ctx.reply(
         "Привет! Интересны ли вам мои темы?",
         Markup.inlineKeyboard([
@@ -18,7 +19,9 @@ const questionButtons = Markup.inlineKeyboard([
 ]);
 
 // Обработчик выбора тем
-export const handleTopics = (ctx: Context) => {
+export const handleTopics = (ctx: CustomContext) => {
+    if (!ctx.match) return; // 🔹 Защита от `null`
+
     let message = "Интересны ли вам мои стартапы?";
 
     switch (ctx.match[0]) {
@@ -34,7 +37,9 @@ export const handleTopics = (ctx: Context) => {
 };
 
 // Обработчик ответа "Да" / "Нет"
-export const handleAnswers = (ctx: Context) => {
+export const handleAnswers = (ctx: CustomContext) => {
+    if (!ctx.match) return; // 🔹 Защита от `null`
+
     const message = ctx.match[0] === "answer_yes"
         ? "Отлично! Рад, что вам интересно."
         : "Понял, учту!";

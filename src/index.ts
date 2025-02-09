@@ -1,4 +1,4 @@
-import bot from "./bot";
+import bot from "./bot.js"; // Импорт по умолчанию
 
 console.log("⚡ Перед bot.launch()");
 bot.launch()
