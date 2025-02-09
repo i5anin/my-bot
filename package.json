@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start_js": "node dist/bot.js",
-    "bot": "ts-node src/bot.ts",
+    "start_js": "tsc && node dist/index.js",
+    "bot": "ts-node src/index.ts",
     "prod:start": "pm2-runtime app.js",
     "lint": "eslint src",
     "lint-fix": "eslint \"src/**/*.js\" --fix"
