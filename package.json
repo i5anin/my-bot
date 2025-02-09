@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start_js": "tsc && node dist/index.js",
-    "bot": "ts-node src/index.ts",
-    "prod:start": "pm2-runtime app.js",
-    "lint": "eslint src",
+    "bot_js": "tsc && node dist/index.js",
+    "bot_ts": "ts-node src/index.ts",
     "lint-fix": "eslint \"src/**/*.js\" --fix"
   },
   "imports": {
