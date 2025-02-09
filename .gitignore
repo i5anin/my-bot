@@ -2,5 +2,5 @@
 /.idea
 /dist
 .env
-src/listFiles.js
+github/listFiles.js
 /github
